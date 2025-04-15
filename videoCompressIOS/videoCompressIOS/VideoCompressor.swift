@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 import NextLevelSessionExporter
-
+//目前找不到匹配的NL，待处理
 public class VideoCompressor {
 
     public static let shared = VideoCompressor()
