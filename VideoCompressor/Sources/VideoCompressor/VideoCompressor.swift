@@ -44,9 +44,9 @@ public class VideoCompressor {
                 // 如果导出被取消，返回取消的回调
                 completion(false, "Export was cancelled.")
             @unknown default:
+                // 如果有未知的错误状态，返回未知错误的回调
                 completion(false, "Unknown status.")
             }
         }
     }
 }
-
