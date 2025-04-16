@@ -31,21 +31,21 @@ public class VideoCompressor {
         ]
         
         // 开始视频导出
-        exporter.export { status in
-            switch status {
-            case .completed:
-                // 如果导出成功，返回成功的回调
-                completion(true, nil)
-            case .failed:
-                // 如果导出失败，返回失败的回调
-                let errorMessage = exporter.error?.localizedDescription ?? "Unknown error"
-                completion(false, errorMessage)
-            case .cancelled:
-                // 如果导出被取消，返回取消的回调
-                completion(false, "Export was cancelled.")
-            @unknown default:
-                completion(false, "Unknown status.")
-            }
-        }
+//        exporter.export { status in
+//            switch status {
+//            case .completed:
+//                // 如果导出成功，返回成功的回调
+//                completion(true, nil)
+//            case .failed:
+//                // 如果导出失败，返回失败的回调
+//                let errorMessage = exporter.error?.localizedDescription ?? "Unknown error"
+//                completion(false, errorMessage)
+//            case .cancelled:
+//                // 如果导出被取消，返回取消的回调
+//                completion(false, "Export was cancelled.")
+//            @unknown default:
+//                completion(false, "Unknown status.")
+//            }
+//        }
     }
 }
