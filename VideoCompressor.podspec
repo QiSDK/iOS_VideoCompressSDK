@@ -7,14 +7,14 @@ Pod::Spec.new do |s|
   DESC
   s.homepage     = 'https://github.com/QiSDK/iOS_VideoCompressSDK'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
-  s.author       = { 'YourName' => 'your@email.com' }
+  s.author       = { 'subifu' => 'subifu908@email.com' }
 
   s.source       = { 
     :git => 'https://github.com/QiSDK/iOS_VideoCompressSDK.git', 
     :tag => s.version.to_s 
   }
 
-  s.platform     = :ios, '11.0'
+  s.platform     = :ios, '12.0'
   s.swift_version = '5.0'
 
   s.source_files  = 'VideoCompressor/Sources/VideoCompressor/**/*.{swift}'  # 👈 路径需与仓库实际一致
