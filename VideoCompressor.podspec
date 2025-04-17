@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author           = { 'subifu' => 'subifu908@gmail.com' }  # 你的姓名和邮箱
   s.source           = { :git => 'https://github.com/QiSDK/iOS_VideoCompressSDK.git', :tag => s.version.to_s }  # 仓库的地址，tag 是版本号
   s.platform         = :ios, '12.0'  # 最低支持 iOS 12.0
-  s.swift_versions = '5.0'
+  s.ios.deployment_target = '12.0'
   s.source_files     = 'VideoCompressor/Sources/**/*.swift'  # 源码文件路径
   s.frameworks        = 'AVFoundation', 'NextLevelSessionExporter'  # 需要的框架
   s.dependency 'NextLevelSessionExporter'  # 如果依赖了其他的库
