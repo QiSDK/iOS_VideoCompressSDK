@@ -1,0 +1,6 @@
+framework module Pods_VideoCompressor {
+  umbrella header "Pods-VideoCompressor-umbrella.h"
+
+  export *
+  module * { export * }
+}

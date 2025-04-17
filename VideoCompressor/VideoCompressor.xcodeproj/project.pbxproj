@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5E2439EDF5FFEE12B71B5458 /* Pods_VideoCompressor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E6E5E8EE937266A2CAF51C /* Pods_VideoCompressor.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		1FC691D52DB0F3DB00505FAF /* VideoCompressor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VideoCompressor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44E6E5E8EE937266A2CAF51C /* Pods_VideoCompressor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoCompressor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABAABBB20F3FA098358E3916 /* Pods-VideoCompressor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCompressor.debug.xcconfig"; path = "Target Support Files/Pods-VideoCompressor/Pods-VideoCompressor.debug.xcconfig"; sourceTree = "<group>"; };
+		BB0C2AFE52046D7D8EB13A94 /* Pods-VideoCompressor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCompressor.release.xcconfig"; path = "Target Support Files/Pods-VideoCompressor/Pods-VideoCompressor.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,17 +43,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2439EDF5FFEE12B71B5458 /* Pods_VideoCompressor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04C0345DEBF8F2D5A69A29A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ABAABBB20F3FA098358E3916 /* Pods-VideoCompressor.debug.xcconfig */,
+				BB0C2AFE52046D7D8EB13A94 /* Pods-VideoCompressor.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1FC691CB2DB0F3DB00505FAF = {
 			isa = PBXGroup;
 			children = (
 				1FC691D72DB0F3DB00505FAF /* VideoCompressor */,
 				1FC691D62DB0F3DB00505FAF /* Products */,
+				04C0345DEBF8F2D5A69A29A5 /* Pods */,
+				92FADF5E8AE8513A0264A5AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +76,14 @@
 				1FC691D52DB0F3DB00505FAF /* VideoCompressor.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		92FADF5E8AE8513A0264A5AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44E6E5E8EE937266A2CAF51C /* Pods_VideoCompressor.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -75,6 +103,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FC691DB2DB0F3DB00505FAF /* Build configuration list for PBXNativeTarget "VideoCompressor" */;
 			buildPhases = (
+				840C274806C09AB4C2FD642D /* [CP] Check Pods Manifest.lock */,
 				1FC691D02DB0F3DB00505FAF /* Headers */,
 				1FC691D12DB0F3DB00505FAF /* Sources */,
 				1FC691D22DB0F3DB00505FAF /* Frameworks */,
@@ -88,8 +117,6 @@
 				1FC691D72DB0F3DB00505FAF /* VideoCompressor */,
 			);
 			name = VideoCompressor;
-			packageProductDependencies = (
-			);
 			productName = VideoCompressor;
 			productReference = 1FC691D52DB0F3DB00505FAF /* VideoCompressor.framework */;
 			productType = "com.apple.product-type.framework";
@@ -137,6 +164,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		840C274806C09AB4C2FD642D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VideoCompressor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1FC691D12DB0F3DB00505FAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -150,6 +202,7 @@
 /* Begin XCBuildConfiguration section */
 		1FC691DC2DB0F3DB00505FAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABAABBB20F3FA098358E3916 /* Pods-VideoCompressor.debug.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -183,6 +236,7 @@
 		};
 		1FC691DD2DB0F3DB00505FAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB0C2AFE52046D7D8EB13A94 /* Pods-VideoCompressor.release.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;

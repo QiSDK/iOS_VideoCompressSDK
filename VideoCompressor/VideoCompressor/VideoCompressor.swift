@@ -43,17 +43,19 @@ public class VideoCompressor {
             AVEncoderBitRateKey: configuration.audioBitrate
         ]
 
-        exporter.export { status in
+        exporter.export(completionHandler:  { progress in
+            // 根据进度回调进行处理
+            // 进度回调，可以用于更新 UI 等操作
+        })
+
+        exporter.export(completionHandler:  { status in
+            // 使用 completionHandler 处理状态
             switch status {
-            case .completed:
+            case .success:
                 completion(true, nil)
-            case .failed:
-                completion(false, exporter.error?.localizedDescription ?? "Unknown error")
-            case .cancelled:
-                completion(false, "Export cancelled")
-            @unknown default:
-                completion(false, "Unknown status")
+            case .failure(let error):
+                completion(false, error.localizedDescription)
             }
-        }
+        })
     }
 }

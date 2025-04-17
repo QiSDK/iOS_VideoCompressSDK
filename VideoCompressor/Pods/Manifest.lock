@@ -1,0 +1,24 @@
+PODS:
+  - NextLevelSessionExporter (0.4.6)
+  - VideoCompressor (1.0.0):
+    - NextLevelSessionExporter
+
+DEPENDENCIES:
+  - NextLevelSessionExporter
+  - VideoCompressor (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - NextLevelSessionExporter
+
+EXTERNAL SOURCES:
+  VideoCompressor:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  NextLevelSessionExporter: 4d8aa5e617f1c709724f2453efe5d4628480f65a
+  VideoCompressor: bf1bc6bcc79d30b24ab25c95da5c945ca1a22c93
+
+PODFILE CHECKSUM: 1cbfbd4e516e4b0bae427bc48405928fe6c72b6e
+
+COCOAPODS: 1.16.2

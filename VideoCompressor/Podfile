@@ -1,0 +1,8 @@
+platform :ios, '12.0'
+
+target 'VideoCompressor' do
+  use_frameworks!
+  pod 'NextLevelSessionExporter'
+  pod 'VideoCompressor', :path => '../'
+
+end
