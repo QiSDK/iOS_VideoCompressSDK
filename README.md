@@ -7,7 +7,7 @@ A lightweight video compression SDK based on `NextLevelSessionExporter`, allowin
 ### CocoaPods
 
 ```ruby
-pod 'VideoCompressor', :git => 'https://github.com/QiSDK/iOS_VideoCompressSDK.git', :tag => '1.0.0'
+pod 'VideoCompressor', :git => 'https://github.com/QiSDK/iOS_VideoCompressSDK.git', :tag => '1.0.4'
 ```
 
 ## Usage
