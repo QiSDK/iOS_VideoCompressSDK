@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "VideoCompressor"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "A lightweight video compression library using NextLevelSessionExporter."
   s.description  = "VideoCompressor is a Swift SDK that wraps NextLevelSessionExporter to provide flexible video compression capabilities."
   s.homepage     = "https://github.com/QiSDK/iOS_VideoCompressSDK"
