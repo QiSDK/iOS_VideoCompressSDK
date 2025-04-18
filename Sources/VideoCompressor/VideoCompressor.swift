@@ -19,13 +19,17 @@ public class VideoCompressor {
         inputURL: URL,
         outputURL: URL,
         configuration: Configuration = Configuration(),
+        progressHandler: ((Float) -> Void)? = nil,
         completion: @escaping (Bool, String?) -> Void
     ) {
         let asset = AVAsset(url: inputURL)
         let exporter = NextLevelSessionExporter(withAsset: asset)
-        exporter.outputURL = outputURL
-        exporter.outputFileType = .mp4
 
+        // 输出为 mp4 + H.264 编码
+        exporter.outputFileType = .mp4
+        exporter.outputURL = outputURL
+
+        // 视频压缩参数
         exporter.videoOutputConfiguration = [
             AVVideoCodecKey: AVVideoCodecType.h264,
             AVVideoWidthKey: configuration.width,
@@ -36,25 +40,27 @@ public class VideoCompressor {
             ]
         ]
 
+        // 音频压缩参数
         exporter.audioOutputConfiguration = [
             AVFormatIDKey: kAudioFormatMPEG4AAC,
             AVNumberOfChannelsKey: configuration.audioChannels,
             AVSampleRateKey: configuration.audioSampleRate,
             AVEncoderBitRateKey: configuration.audioBitrate
         ]
-        exporter.export(completionHandler:  { progress in
-            // 根据进度回调进行处理
-            // 进度回调，可以用于更新 UI 等操作
-        })
 
-        exporter.export(completionHandler:  { status in
-            // 使用 completionHandler 处理状态
+        // 可选：导出进度回调
+        exporter.progressHandler = { progress in
+            progressHandler?(progress)
+        }
+
+        // 开始导出
+        exporter.export { status in
             switch status {
             case .success:
                 completion(true, nil)
             case .failure(let error):
                 completion(false, error.localizedDescription)
             }
-        })
+        }
     }
 }
