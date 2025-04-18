@@ -1,0 +1,6 @@
+framework module Pods_textvideo {
+  umbrella header "Pods-textvideo-umbrella.h"
+
+  export *
+  module * { export * }
+}

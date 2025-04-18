@@ -1,0 +1,6 @@
+framework module VideoCompressor {
+  umbrella header "VideoCompressor-umbrella.h"
+
+  export *
+  module * { export * }
+}
