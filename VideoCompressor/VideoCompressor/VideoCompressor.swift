@@ -49,10 +49,10 @@ public class VideoCompressor {
         ]
 
         // 可选：导出进度回调
-        exporter.progressHandler = { progress in
-            progressHandler?(progress)
+        exporter.export { progress in
+            // 根据进度回调进行处理
+            // 进度回调，可以用于更新 UI 等操作
         }
-
         // 开始导出
         exporter.export { status in
             switch status {
