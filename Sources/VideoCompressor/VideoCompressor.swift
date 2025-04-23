@@ -1,6 +1,7 @@
 import Foundation
 import AVFoundation
 import NextLevelSessionExporter
+import UIKit
 
 public class VideoCompressor {
     
@@ -66,5 +67,43 @@ public class VideoCompressor {
                 print("Failed to load asset tracks: \(error?.localizedDescription ?? "Unknown error")")
             }
         }
+    }
+    
+    /// 压缩图片
+    /// - Parameters:
+    ///   - image: 原始 UIImage
+    ///   - targetSize: 目标尺寸（可选，不填表示不改变尺寸）
+    ///   - quality: 压缩质量，0~1（1表示原图质量）
+    /// - Returns: 压缩后的 JPEG Data
+    public static func compressImage(_ image: UIImage,
+                                     targetSize: CGSize? = nil,
+                                     quality: CGFloat = 0.7) -> Data? {
+        var resizedImage = image
+        
+        if let size = targetSize {
+            resizedImage = resizeImage(image: image, targetSize: size)
+        }
+        
+        return resizedImage.jpegData(compressionQuality: quality)
+    }
+    
+    /// 调整图片大小
+    private static func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // 按较小比例缩放（等比缩放）
+        let ratio = min(widthRatio, heightRatio)
+        let newSize = CGSize(width: size.width * ratio, height: size.height * ratio)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: CGRect(origin: .zero, size: newSize))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage ?? image
     }
 }
