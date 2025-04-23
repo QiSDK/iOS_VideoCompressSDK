@@ -8,7 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - SVProgressHUD
-  - VideoCompressor (from `https://github.com/QiSDK/iOS_VideoCompressSDK.git`, tag `1.0.4`)
+  - VideoCompressor (from `https://github.com/QiSDK/iOS_VideoCompressSDK.git`, tag `1.0.5`)
 
 SPEC REPOS:
   trunk:
@@ -18,18 +18,18 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   VideoCompressor:
     :git: https://github.com/QiSDK/iOS_VideoCompressSDK.git
-    :tag: 1.0.4
+    :tag: 1.0.5
 
 CHECKOUT OPTIONS:
   VideoCompressor:
     :git: https://github.com/QiSDK/iOS_VideoCompressSDK.git
-    :tag: 1.0.4
+    :tag: 1.0.5
 
 SPEC CHECKSUMS:
   NextLevelSessionExporter: 4d8aa5e617f1c709724f2453efe5d4628480f65a
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
   VideoCompressor: a26d3748c7c6175da2be437346f7a821f202a31b
 
-PODFILE CHECKSUM: 53ea48a7e2b158f96837d95bd0b67e4b1a16e500
+PODFILE CHECKSUM: ab0cee335f158b51f11beafdd1acce59eb3ddd13
 
 COCOAPODS: 1.16.2
